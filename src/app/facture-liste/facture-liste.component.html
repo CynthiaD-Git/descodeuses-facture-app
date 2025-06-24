@@ -1,0 +1,56 @@
+<p>Facture</p>
+
+<div class="conteneur-flex"> <!-- pour que le tableau soit à gauche -->
+
+
+<table>
+    <tr> <!-- en-tête fixe -->
+        <th> DESIGNATION </th>
+        <th> QUANTITE </th>
+        <th> PRIX UNITAIRE </th>
+    </tr>
+
+    @for (item of factureliste; track item){
+    <tr>
+        <td>{{item.designation}}</td>
+        <td>{{item.quantite}}</td>
+        <td>{{item.prixUnitaire}} € </td>
+
+    </tr>
+    }
+
+
+    <tr>
+        <td colspan="2"> <strong>Total</strong></td> <!-- Colspan sert à pour fusionner 2 cases -->
+        <td><strong>{{total}} € </strong></td>
+    </tr>
+</table>
+
+
+<form [formGroup]="formgroup" (ngSubmit)="onSubmit()" class="bg-purple-400 px-18 py-12">
+    <div>
+        <mat-form-field class="w-62">
+            <mat-label>DESIGNATION</mat-label>
+            <input matInput formControlName="designation" type="text" placeholder="Nom">
+        </mat-form-field>
+    </div>
+    <div id="prenom-container">
+        <mat-form-field class="w-62">
+            <mat-label>QUANTITE</mat-label>
+            <input matInput formControlName="quantite" type="text" placeholder="Nombre">
+        </mat-form-field>
+    </div>
+    <div id="prenom-container">
+        <mat-form-field class="w-62">
+            <mat-label>prixUnitaire</mat-label>
+            <input matInput formControlName="prixUnitaire" type="text" placeholder="Montant">
+        </mat-form-field>
+    </div>
+
+    <div class="submit-container" class="mt-8">
+        <button class="w-full !text-xl !text-teal-500" type="submit" mat-raised-button>Submit</button>
+    </div>
+    </form>
+</div>
+
+    

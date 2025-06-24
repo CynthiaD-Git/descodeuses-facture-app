@@ -1,0 +1,23 @@
+.conteneur-flex {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start; /* Alignement en haut */
+    gap: 10px; /* Espace entre le tableau et le formulaire */
+    /* il faut mettre la direction de flex */
+    text-align: right;
+  }
+
+  table {
+    border-collapse: collapse;
+    width: 40%;
+  }
+
+table, th, td {
+    border: 1px solid black;
+    border-color: #2b4747;
+    padding: 8px;
+}
+
+form {
+    width: 20%;
+  }
